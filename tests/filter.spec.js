@@ -13,6 +13,12 @@ describe('filter', () => {
 
     const robDashResult = filter(words, wordLengthGreaterThan6);
 
+    // robDash filtered array should have the same length as the native
+    // filter result
+    expect(robDashResult.length).toEqual(nativeResult.length)
+
+    // robDash should contain all the same elements as the native
+    // filter result
     for (let i = 0; i < robDashResult.length; i++) {
       expect(robDashResult[i]).toEqual(nativeResult[i]);
     }
