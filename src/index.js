@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 function every(array, callback) {
-  for (const element of array) {
-    if (!callback(element)) return false;
+  for (let i = 0; i < array.length; ++i) {
+    if (!callback(array[i], i, array)) return false;
   }
   return true;
 };
