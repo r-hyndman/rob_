@@ -24,7 +24,7 @@ To learn more about higher order functions, callbacks, testing and how JavaScrip
 
 ## TODO
 
-- [ ] `every`
+- [x] `every`
 - [ ] `filter`
 - [ ] `find`
 - [ ] `findIndex`
