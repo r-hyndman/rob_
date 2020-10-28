@@ -18,4 +18,3 @@ export {
   every,
   filter,
 };
-
