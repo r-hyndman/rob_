@@ -28,7 +28,7 @@ function findIndex(array, callback) {
   return -1;
 };
 
-function flat(array, depth) {
+function flat(array, depth = 1) {
   let result = [];
   for (let i = 0; i < array.length; ++i) {
     if (Array.isArray(array[i]) && depth > 0) {
