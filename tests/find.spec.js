@@ -12,6 +12,7 @@ describe('find', () => {
     const nativeResult = testArray.find(valueEquals12);
     const robDashResult = find(testArray, valueEquals12);
 
+    // robDashResult should be the same as nativeResult
     expect(robDashResult).toEqual(nativeResult);
   });
 
@@ -23,6 +24,7 @@ describe('find', () => {
     const nativeResult = testArray.find(valueLessThan20);
     const robDashResult = find(testArray, valueLessThan20);
 
+    // robDashResult should be the same as nativeResult
     expect(robDashResult).toEqual(nativeResult);
   });
 });
