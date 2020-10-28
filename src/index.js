@@ -14,6 +14,13 @@ function filter(array, callback) {
   return result;
 };
 
+export const find = (array, test) => {
+  for (const element of array) {
+    if (test(element)) return element;
+  }
+  return undefined;
+};
+
 export {
   every,
   filter,
