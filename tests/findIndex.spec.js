@@ -4,18 +4,27 @@ import {findIndex} from '../src';
 const testArray = [5, 12, 8, 130, 44];
 
 describe('findIndex', () => {
-  it('should find the index of the first matching condition', () => {
-    const tests = [
-      (element) => element == 12,
-      (element) => element < 20,
-      (element) => element > 10,
-    ];
+  it('should find the index of the first element equalling 12', () => {
+    function valueEquals12(element) {
+      return element == 12;
+    };
 
-    for (const test of tests) {
-      const nativeResult = testArray.findIndex(test);
-      const robDashResult = findIndex(testArray, test);
+    const nativeResult = testArray.findIndex(valueEquals12);
+    const robDashResult = findIndex(testArray, valueEquals12);
 
-      expect(robDashResult).toEqual(nativeResult);
-    }
+    // robDashResult should be the same as nativeResult
+    expect(robDashResult).toEqual(nativeResult);
+  });
+
+  it('should find the index of the first element less than 20', () => {
+    function valueLessThan20(element) {
+      return element < 20;
+    };
+
+    const nativeResult = testArray.findIndex(valueLessThan20);
+    const robDashResult = findIndex(testArray, valueLessThan20);
+
+    // robDashResult should be the same as nativeResult
+    expect(robDashResult).toEqual(nativeResult);
   });
 });
