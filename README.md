@@ -25,7 +25,7 @@ To learn more about higher order functions, callbacks, testing and how JavaScrip
 ## TODO
 
 - [x] `every`
-- [ ] `filter`
+- [x] `filter`
 - [ ] `find`
 - [ ] `findIndex`
 - [ ] `flat` - can be done recursively :O
