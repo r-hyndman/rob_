@@ -21,8 +21,16 @@ function find(array, callback) {
   return undefined;
 };
 
+function findIndex(array, callback) {
+  for (let i = 0; array.length; ++i) {
+    if (callback(array[i], i, array)) return i;
+  }
+  return -1;
+};
+
 export {
   every,
   filter,
   find,
+  findIndex,
 };
