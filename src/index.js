@@ -28,13 +28,13 @@ function findIndex(array, callback) {
   return -1;
 };
 
-export const flat = (array, depth) => {
+function flat(array, depth) {
   let result = [];
-  for (const element of array) {
-    if (Array.isArray(element) && depth > 0) {
-      result = [...result, ...(flat(element, depth - 1))];
+  for (let i = 0; i < array.length; ++i) {
+    if (Array.isArray(array[i]) && depth > 0) {
+      result = [...result, ...(flat(array[i], depth - 1))];
     } else {
-      result.push(element);
+      result.push(array[i]);
     }
   }
   return result;
@@ -45,5 +45,5 @@ export {
   filter,
   find,
   findIndex,
+  flat,
 };
-
