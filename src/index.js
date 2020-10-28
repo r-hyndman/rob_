@@ -28,9 +28,22 @@ function findIndex(array, callback) {
   return -1;
 };
 
+function flat(array, depth = 1) {
+  let result = [];
+  for (let i = 0; i < array.length; ++i) {
+    if (Array.isArray(array[i]) && depth > 0) {
+      result = result.concat((flat(array[i], depth - 1)));
+    } else {
+      result.push(array[i]);
+    }
+  }
+  return result;
+};
+
 export {
   every,
   filter,
   find,
   findIndex,
+  flat,
 };
