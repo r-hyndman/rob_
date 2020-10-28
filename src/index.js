@@ -32,7 +32,7 @@ function flat(array, depth) {
   let result = [];
   for (let i = 0; i < array.length; ++i) {
     if (Array.isArray(array[i]) && depth > 0) {
-      result = [...result, ...(flat(array[i], depth - 1))];
+      result = result.concat((flat(array[i], depth - 1)));
     } else {
       result.push(array[i]);
     }
