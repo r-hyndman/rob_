@@ -26,7 +26,7 @@ To learn more about higher order functions, callbacks, testing and how JavaScrip
 
 - [x] `every`
 - [x] `filter`
-- [ ] `find`
+- [x] `find`
 - [ ] `findIndex`
 - [ ] `flat` - can be done recursively :O
 - [ ] `flatMap`
