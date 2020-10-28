@@ -14,9 +14,9 @@ function filter(array, callback) {
   return result;
 };
 
-export const find = (array, test) => {
-  for (const element of array) {
-    if (test(element)) return element;
+function find(array, callback) {
+  for (let i = 0; i < array.length; ++i) {
+    if (callback(array[i], i, array)) return array[i];
   }
   return undefined;
 };
@@ -24,4 +24,5 @@ export const find = (array, test) => {
 export {
   every,
   filter,
+  find,
 };

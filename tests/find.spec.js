@@ -4,19 +4,25 @@ import {find} from '../src';
 const testArray = [5, 12, 8, 130, 44];
 
 describe('find', () => {
-  it('should find the first element that matches the test conditions', () => {
-    const tests = [
-      (element) => element == 12,
-      (element) => element < 20,
-      (element) => element > 10,
-      (element) => element == 'find',
-    ];
+  it('should find the first element with value equal to 12', () => {
+    function valueEquals12(element) {
+      return element == 12;
+    };
 
-    for (const test of tests) {
-      const nativeResult = testArray.find(test);
-      const robDashResult = find(testArray, test);
+    const nativeResult = testArray.find(valueEquals12);
+    const robDashResult = find(testArray, valueEquals12);
 
-      expect(robDashResult).toEqual(nativeResult);
-    }
+    expect(robDashResult).toEqual(nativeResult);
+  });
+
+  it('should find the first element with value less than 20', () => {
+    function valueLessThan20(element) {
+      return element < 20;
+    };
+
+    const nativeResult = testArray.find(valueLessThan20);
+    const robDashResult = find(testArray, valueLessThan20);
+
+    expect(robDashResult).toEqual(nativeResult);
   });
 });
