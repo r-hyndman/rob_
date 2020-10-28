@@ -1,7 +1,11 @@
-export const every = (array, test) => {
+/* eslint-disable require-jsdoc */
+function every(array, callback) {
   for (const element of array) {
-    if (!test(element)) return false;
+    if (!callback(element)) return false;
   }
   return true;
 };
 
+export {
+  every,
+};

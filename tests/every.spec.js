@@ -4,19 +4,27 @@ import {every} from '../src';
 const testArray = [5, 12, 8, 130, 44];
 
 describe('every', () => {
-  it('should check each element matches the test conditions', () => {
-    const tests = [
-      (element) => Number.isInteger(element),
-      (element) => element < 30,
-      (element) => element > 0,
-      (element) => element == 'every',
-    ];
+  it('should check the value of each element is < 30', () => {
+    function valueLessThan30(element) {
+      return element < 30;
+    };
 
-    for (const test of tests) {
-      const nativeResult = testArray.every(test);
-      const robDashResult = every(testArray, test);
+    const nativeResult = testArray.every(valueLessThan30);
+    const robDashResult = every(testArray, valueLessThan30);
 
-      expect(robDashResult).toEqual(nativeResult);
-    }
+    // robDashResult should be the same as nativeResult
+    expect(robDashResult).toEqual(nativeResult);
+  });
+
+  it('should check the value of each element is > 0', () => {
+    function valueGreaterThan0(element) {
+      return element > 0;
+    };
+
+    const nativeResult = testArray.every(valueGreaterThan0);
+    const robDashResult = every(testArray, valueGreaterThan0);
+
+    // robDashResult should be the same as nativeResult
+    expect(robDashResult).toEqual(nativeResult);
   });
 });
