@@ -1,7 +1,7 @@
 import {findIndex} from '../src';
 
 /* eslint-disable require-jsdoc */
-const testArray = [5, 12, 8, 130, 44];
+const testArray = [5, 12, 8, 90, 44];
 
 describe('findIndex', () => {
   it('should find the index of the first element equalling 12', () => {
@@ -16,13 +16,13 @@ describe('findIndex', () => {
     expect(robDashResult).toEqual(nativeResult);
   });
 
-  it('should find the index of the first element less than 20', () => {
-    function valueLessThan20(element) {
-      return element < 20;
+  it('should find the index of the first element greater than 100', () => {
+    function valueGreaterThan100(element) {
+      return element > 100;
     };
 
-    const nativeResult = testArray.findIndex(valueLessThan20);
-    const robDashResult = findIndex(testArray, valueLessThan20);
+    const nativeResult = testArray.findIndex(valueGreaterThan100);
+    const robDashResult = findIndex(testArray, valueGreaterThan100);
 
     // robDashResult should be the same as nativeResult
     expect(robDashResult).toEqual(nativeResult);

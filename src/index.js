@@ -22,7 +22,7 @@ function find(array, callback) {
 };
 
 function findIndex(array, callback) {
-  for (let i = 0; array.length; ++i) {
+  for (let i = 0; i < array.length; ++i) {
     if (callback(array[i], i, array)) return i;
   }
   return -1;
