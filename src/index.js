@@ -67,6 +67,13 @@ function reduceRight(array, callback, initial) {
   return reduce(array.reverse(), callback, initial);
 };
 
+function some(array, callback) {
+  for (let i = 0; i < array.length; ++i) {
+    if (callback(array[i], i, array)) return true;
+  }
+  return false;
+};
+
 export {
   every,
   filter,
@@ -77,4 +84,5 @@ export {
   map,
   reduce,
   reduceRight,
+  some,
 };
