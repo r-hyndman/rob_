@@ -40,6 +40,12 @@ function flat(array, depth = 1) {
   return result;
 };
 
+function forEach(array, callback) {
+  for (let i = 0; i < array.length; ++i) {
+    callback(array[i], i, array);
+  }
+};
+
 function map(array, callback) {
   const result = [];
   for (let i = 0; i < array.length; ++i) {
@@ -54,5 +60,6 @@ export {
   find,
   findIndex,
   flat,
+  forEach,
   map,
 };
