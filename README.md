@@ -31,7 +31,7 @@ To learn more about higher order functions, callbacks, testing and how JavaScrip
 - [x] `flat` - can be done recursively :O
 - [ ] `flatMap`
 - [ ] `forEach`
-- [ ] `map`
+- [x] `map`
 - [ ] `reduce`
 - [ ] `reduceRight`
 - [ ] `some`
