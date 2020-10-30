@@ -30,7 +30,7 @@ To learn more about higher order functions, callbacks, testing and how JavaScrip
 - [x] `findIndex`
 - [x] `flat` - can be done recursively :O
 - [ ] `flatMap`
-- [ ] `forEach`
+- [x] `forEach`
 - [x] `map`
 - [ ] `reduce`
 - [ ] `reduceRight`
