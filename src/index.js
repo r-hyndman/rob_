@@ -55,7 +55,7 @@ function map(array, callback) {
 };
 
 function reduce(array, callback, initial) {
-  let accumulator = initial ?? array[0];
+  let accumulator = initial ? initial : array[0];
   const startIndex = initial ? 0 : 1;
   for (let i = startIndex; i < array.length; ++i) {
     accumulator = callback(accumulator, array[i], i, array);
