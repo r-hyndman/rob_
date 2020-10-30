@@ -54,6 +54,15 @@ function map(array, callback) {
   return result;
 };
 
+function reduce(array, callback, initial) {
+  let accumulator = initial ?? array[0];
+  const startIndex = initial ? 0 : 1;
+  for (let i = startIndex; i < array.length; ++i) {
+    accumulator = callback(accumulator, array[i], i, array);
+  }
+  return accumulator;
+};
+
 export {
   every,
   filter,
@@ -62,4 +71,5 @@ export {
   flat,
   forEach,
   map,
+  reduce,
 };
