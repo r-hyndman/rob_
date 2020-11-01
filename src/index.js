@@ -64,12 +64,7 @@ function reduce(array, callback, initial) {
 };
 
 function reduceRight(array, callback, initial) {
-  let accumulator = initial ?? array[array.length - 1];
-  const startIndex = initial ? array.length - 1 : array.length - 2;
-  for (let i = startIndex; i >= 0; --i) {
-    accumulator = callback(accumulator, array[i], i, array);
-  }
-  return accumulator;
+  return reduce(array.reverse(), callback, initial);
 };
 
 export {
