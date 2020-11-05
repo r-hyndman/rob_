@@ -18,7 +18,7 @@ describe('reduce', () => {
 
   it('should return the highest value', () => {
     function highestValue(accumulator, element) {
-      return accumulator || 0 > element ? accumulator : element;
+      return accumulator > element ? accumulator : element;
     };
 
     const nativeResult = testArray.reduce(highestValue);
