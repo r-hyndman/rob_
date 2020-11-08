@@ -63,6 +63,10 @@ function reduce(array, callback, initial) {
   return accumulator;
 };
 
+function reduceRight(array, callback, initial) {
+  return reduce([...array].reverse(), callback, initial);
+};
+
 export {
   every,
   filter,
@@ -72,4 +76,5 @@ export {
   forEach,
   map,
   reduce,
+  reduceRight,
 };
