@@ -41,20 +41,7 @@ function flat(array, depth = 1) {
 };
 
 function flatMap(array, callback) {
-  const mapResult = [];
-  for (let i = 0; i < array.length; ++i) {
-    mapResult.push(callback(array[i], i, array));
-  }
-  let flatResult = [];
-  for (let i = 0; i < mapResult.length; ++i) {
-    if (Array.isArray(mapResult[i])) {
-      flatResult = flatResult.concat((flat(mapResult[i])));
-    } else {
-      flatResult.push(mapResult[i]);
-    }
-  }
-
-  return flatResult;
+  return flat(map(array, callback));
 };
 
 function forEach(array, callback) {
