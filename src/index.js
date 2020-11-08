@@ -64,11 +64,7 @@ function reduce(array, callback, initial) {
 };
 
 function reduceRight(array, callback, initial) {
-<<<<<<< HEAD
   return reduce([...array.reverse()], callback, initial);
-=======
-  return reduce(array.reverse(), callback, initial);
->>>>>>> 77d08f493234a6ab8657cb2dbbdb25880cff7a38
 };
 
 function some(array, callback) {
