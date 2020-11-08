@@ -32,6 +32,6 @@ To learn more about higher order functions, callbacks, testing and how JavaScrip
 - [ ] `flatMap`
 - [x] `forEach`
 - [x] `map`
-- [ ] `reduce`
+- [x] `reduce`
 - [ ] `reduceRight`
 - [ ] `some`
