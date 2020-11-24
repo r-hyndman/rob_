@@ -40,6 +40,10 @@ function flat(array, depth = 1) {
   return result;
 };
 
+function flatMap(array, callback) {
+  return flat(map(array, callback));
+};
+
 function forEach(array, callback) {
   for (let i = 0; i < array.length; ++i) {
     callback(array[i], i, array);
@@ -67,14 +71,23 @@ function reduceRight(array, callback, initial) {
   return reduce([...array].reverse(), callback, initial);
 };
 
+function some(array, callback) {
+  for (let i = 0; i < array.length; ++i) {
+    if (callback(array[i], i, array)) return true;
+  }
+  return false;
+};
+
 export {
   every,
   filter,
   find,
   findIndex,
   flat,
+  flatMap,
   forEach,
   map,
   reduce,
   reduceRight,
+  some,
 };
